@@ -1,0 +1,904 @@
+<!doctype html>
+<html lang="pt-BR"><head>
+    <meta name="vyntrix-project" content="meusite-6da93">
+    <meta name="vyntrix-version" content="v16">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IBO REVENDA - IBO REVENDA o Melhor Reprodutor de Mídia</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&amp;display=swap" rel="stylesheet">
+    
+    <style>
+        /* Variáveis de Cores */
+        :root {
+            --vermelho-IBO REVENDA: #d61625;
+            --vermelho-hover: #b3121f;
+            --fundo-escuro: #0b0b0d;
+            --fundo-secao: #151518;
+            --texto-claro: #ececec;
+            --branco: #ffffff;
+            --verde-wpp: #25D366;
+            --radius: 12px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--fundo-escuro);
+            color: var(--texto-claro);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: min(100%, 1200px);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* =========================================
+           TOPO E HERO (CONVERSÃO)
+           ========================================= */
+        .bg-vermelho {
+            background-color: var(--vermelho-IBO REVENDA);
+            color: var(--branco);
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        header img {
+            max-width: 90px;
+            height: auto;
+            background: white;
+            border-radius: 8px;
+            padding: 5px;
+        }
+
+        .menu-topo {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+
+        .menu-topo a {
+            color: var(--branco);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            text-transform: uppercase;
+            transition: opacity 0.3s;
+        }
+
+        .menu-topo a:hover { opacity: 0.8; }
+
+        .btn-header {
+            background: var(--verde-wpp);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 900;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        
+        .btn-header:hover { filter: brightness(1.1); }
+
+        .hero {
+            padding: 70px 0;
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .hero-texto h1 {
+            font-size: clamp(34px, 4vw, 54px);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: 900;
+            line-height: 1.1;
+        }
+
+        .hero-texto p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 35px;
+            color: rgba(255, 255, 255, 0.95);
+            max-width: 95%;
+        }
+
+        .hero-img {
+            width: 100%;
+        }
+
+        .hero-img img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.4));
+            display: block;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--branco);
+            border: 3px solid var(--branco);
+            padding: 15px 40px;
+            font-size: 1.2em;
+            font-weight: 900;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--branco);
+            color: var(--vermelho-IBO REVENDA);
+            transform: translateY(-3px);
+        }
+
+        /* Gatilhos de Confiança */
+        .trust-bar {
+            background-color: #111;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        .trust-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 15px;
+            color: #ccc;
+        }
+        
+        .trust-item span {
+            color: var(--vermelho-IBO REVENDA);
+            font-size: 20px;
+        }
+
+        /* =========================================
+           CARROSSEL E PLANOS (TEMA ESCURO PREMIUM)
+           ========================================= */
+        .section-carousel {
+            padding: 50px 0 20px 0;
+            overflow: hidden;
+        }
+
+        .section-carousel h2 {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .marquee {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .marquee:before, .marquee:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 80px;
+            z-index: 2;
+            pointer-events: none;
+        }
+        .marquee:before { left: 0; background: linear-gradient(to right, var(--fundo-escuro), transparent); }
+        .marquee:after { right: 0; background: linear-gradient(to left, var(--fundo-escuro), transparent); }
+
+        .marquee__track {
+            display: flex;
+            gap: 15px;
+            width: max-content;
+        }
+
+        .marquee--ltr .marquee__track { animation: marquee-ltr 40s linear infinite; }
+        .marquee--rtl .marquee__track { animation: marquee-rtl 40s linear infinite; }
+
+        @keyframes marquee-rtl { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        @keyframes marquee-ltr { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+
+        .poster {
+            width: 150px;
+            aspect-ratio: 2 / 3;
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--fundo-secao);
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .poster img { width: 100%; height: 100%; object-fit: cover; }
+        .poster:hover { transform: translateY(-5px); border-color: var(--vermelho-IBO REVENDA); }
+
+        .skeleton {
+            animation: shimmer 1.5s infinite linear;
+            background: linear-gradient(90deg, #151518, #222226, #151518);
+            background-size: 200% 100%;
+        }
+        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+
+        /* Planos */
+        .planos {
+            padding: 80px 0 40px 0;
+            text-align: center;
+        }
+
+        .planos-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px; /* Espaço entre os dois planos */
+            flex-wrap: wrap; /* Garante que os planos fiquem um embaixo do outro no celular */
+        }
+
+        .card-plano {
+            background: var(--fundo-secao);
+            width: 100%; /* Adicionado para flexbox */
+            max-width: 400px;
+            padding: 40px 30px;
+            border-radius: 15px;
+            border-top: 5px solid var(--vermelho-IBO REVENDA);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+        }
+
+        .card-plano h3 { font-size: 1.8em; text-transform: uppercase; margin-bottom: 10px; }
+        .preco { font-size: 3.5em; font-weight: 900; color: var(--vermelho-IBO REVENDA); margin: 10px 0 20px 0; }
+        .preco span { font-size: 0.35em; color: #888; }
+        
+        .lista-beneficios {
+            list-style: none;
+            margin-bottom: 30px;
+            text-align: left;
+            color: #bbb;
+            line-height: 1.8;
+        }
+        
+        .lista-beneficios li::before {
+            content: '✓ ';
+            color: var(--vermelho-IBO REVENDA);
+            font-weight: bold;
+        }
+
+        .btn-comprar {
+            display: block;
+            background: var(--vermelho-IBO REVENDA);
+            color: white;
+            padding: 18px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1.2em;
+            border-radius: 8px;
+            text-transform: uppercase;
+            transition: 0.3s;
+            box-shadow: 0 10px 20px rgba(214, 22, 37, 0.3);
+        }
+        .btn-comprar:hover { 
+            background: var(--vermelho-hover); 
+            transform: translateY(-2px);
+            box-shadow: 0 15px 25px rgba(214, 22, 37, 0.5);
+        }
+
+        /* =========================================
+           FAQ - PERGUNTAS FREQUENTES
+           ========================================= */
+        .faq-section {
+            padding: 40px 0 80px 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 40px;
+            color: #fff;
+        }
+
+        .faq-item {
+            background: var(--fundo-secao);
+            border: 1px solid rgba(255,255,255,0.05);
+            margin-bottom: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-pergunta {
+            width: 100%;
+            background: none;
+            border: none;
+            color: #fff;
+            padding: 20px;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+
+        .faq-pergunta:hover {
+            background: rgba(255,255,255,0.02);
+        }
+
+        .faq-pergunta::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--vermelho-IBO REVENDA);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.ativo .faq-pergunta::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-resposta {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background: rgba(0,0,0,0.2);
+        }
+
+        .faq-resposta p {
+            padding: 0 20px 20px 20px;
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           RODAPÉ PROFISSIONAL (FOOTER)
+           ========================================= */
+        .footer-pro {
+            background-color: #070709;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding: 60px 0 20px 0;
+            color: #888;
+            font-size: 14px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .footer-col img {
+            max-width: 120px;
+            margin-bottom: 15px;
+            background: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .footer-col p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--vermelho-IBO REVENDA);
+        }
+
+        .selos-seguranca {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .selo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: #111;
+            padding: 10px 15px;
+            border-radius: 5px;
+            border: 1px solid rgba(255,255,255,0.05);
+            font-size: 12px;
+            font-weight: bold;
+            color: #ccc;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 13px;
+        }
+
+        .aviso-legal {
+            max-width: 900px;
+            margin: 0 auto 15px auto;
+            text-align: justify;
+            font-size: 11px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Botão Flutuante do WhatsApp */
+        .btn-whatsapp-flutuante {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--verde-wpp);
+            color: white;
+            border-radius: 50%;
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            transition: 0.3s;
+        }
+        .btn-whatsapp-flutuante:hover { transform: scale(1.1); }
+        .btn-whatsapp-flutuante svg { width: 38px; height: 38px; fill: currentColor; }
+
+        /* =========================================
+           A MÁGICA PARA FUNCIONAR NO CELULAR
+           ========================================= */
+        @media (max-width: 900px) {
+            .hero-grid { 
+                display: flex; 
+                flex-direction: column-reverse; 
+                text-align: center; 
+                gap: 20px;
+            }
+            .hero-img { 
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                padding-bottom: 20px; 
+            }
+            .hero-img img {
+                width: 90%;
+                max-width: 400px;
+                height: auto;
+            }
+            .menu-topo { display: none; }
+            .poster { width: 120px; }
+            .trust-grid { flex-direction: column; gap: 15px; }
+            .faq-section { padding: 20px 20px 60px 20px; }
+        }
+    </style>
+<link id="vyn-anim" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"><style id="vyn-color-inject">:root{--gold:#111111 !important;--accent:#111111 !important;--cor-botoes:#d4af37 !important;--red:#111111 !important;--purple:#111111 !important;--p:#111111 !important;}</style>
+</head>
+<body class="">
+
+    <div class="bg-vermelho">
+        
+        <header class="container">
+            <img src="https://play-lh.googleusercontent.com/pvGdA_fFqMNDDZ2hef1_qK0VapDKMrmidKrYcD0OmLfcKcMwM_yOGlLajjVx2tzXf_Q" alt="Logo IBO REVENDA">
+            
+            <ul class="menu-topo">
+                <li><a href="#planos">Plano</a></li>
+                <li><a href="#catalogo">Conteúdos</a></li>
+                <li><a href="#faq">Dúvidas</a></li>
+            </ul>
+
+            <a href="https://api.whatsapp.com/send?phone=5511999999999NUMERO?text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20com%20o%20aplicativo!" class="btn-header">
+                Fale Conosco
+            </a>
+        </header>
+
+        <section class="hero container">
+            <div class="hero-grid">
+                <div class="hero-texto">
+                    <h1 class="">COMPRA O SEU FAVORITO AQUI! O MEU SITE OFERECE A EXPERIÊNCIA DE STREAMING MAIS IMPRESSIVA DO MERCADO, COMPRE AGORA!</h1>
+                    <p>Assista a milhares de filmes, séries e canais em alta qualidade diretamente na sua  TV Android, TV Box ou Fire Stick.</p>
+                    <a href="https://api.whatsapp.com/send?phone=5511999999999NUMERO?text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20com%20o%20aplicativo!" class="btn-outline">
+                        Fale Conosco ➜
+                    </a>
+                </div>
+                <div class="hero-img">
+                    <img src="https://i.ytimg.com/vi/g5Wub3egRlo/hqdefault.jpg" alt="Aplicativo rodando em TV e Celulares">
+                </div>
+            </div>
+        </section>
+
+    </div> 
+
+    <div class="trust-bar">
+        <div class="container trust-grid">
+            <div class="trust-item"><span>⚡</span> Instalação Imediata</div>
+            <div class="trust-item"><span>🔒</span> Software 100% Seguro</div>
+            <div class="trust-item"><span>💬</span> Suporte Especializado</div>
+        </div>
+    </div>
+
+    <section id="catalogo" class="section-carousel">
+        <div class="container">
+            <h2>Lançamentos exclusivos do Meu Site! Não perca os filmes e séries mais aguardados do momento. 🎬</h2>
+            <div class="marquee marquee--ltr">
+                <div class="marquee__track" id="moviesTrack" aria-live="polite" style="min-width: 200%;"><div class="poster"><img loading="lazy" decoding="async" alt="Máquina de Guerra" src="https://image.tmdb.org/t/p/w342/48h40o6Q97hZaqH0g7bOiXOrImX.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Missão Refúgio" src="https://image.tmdb.org/t/p/w342/hSvhZRkbYD9crC4nqy8uCk9EdFH.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="O Refúgio" src="https://image.tmdb.org/t/p/w342/49b7CTeJqugnpBboT6D5xGy3h4H.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Zootopia 2" src="https://image.tmdb.org/t/p/w342/v8sjoZynhlyAT4pYdTI8m7FFHq9.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Твое сердце будет разбито" src="https://image.tmdb.org/t/p/w342/iGpMm603GUKH2SiXB2S5m4sZ17t.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Cara de Um, Focinho de Outro" src="https://image.tmdb.org/t/p/w342/ftPFJBGbldoWiiPrmesW96zBzdH.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Destruição Final 2" src="https://image.tmdb.org/t/p/w342/sgvNCaWe4LmdKRKmIHR9VvzhKR2.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Justiça Artificial" src="https://image.tmdb.org/t/p/w342/vI7bNC07BaSEvZ9ATzV57wpAYwQ.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="O Som da Morte" src="https://image.tmdb.org/t/p/w342/1tX11KQzujSDXdszFNRvQbbNi72.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Hellfire" src="https://image.tmdb.org/t/p/w342/tQti9QTf13MfzNpXguijgNh7ojE.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Dupla Perigosa" src="https://image.tmdb.org/t/p/w342/jYpk5Zun4VTWrplO3m9BHANi4S5.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Boa Sorte, Divirta-se, Não Morra" src="https://image.tmdb.org/t/p/w342/ybXcKzJr0nuRZaLB74ujITNPNeH.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Vanaveera" src="https://image.tmdb.org/t/p/w342/oBYExKI8E3bTzQjPkofhpV2EJon.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="A Guerra dos Mundos" src="https://image.tmdb.org/t/p/w342/yY5CbfXBxsPvYi0TzmaCP7uunnn.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="“O Morro dos Ventos Uivantes”" src="https://image.tmdb.org/t/p/w342/762vOiAWzosAH95sKLzUqYaAoHR.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Avatar: Fogo e Cinzas" src="https://image.tmdb.org/t/p/w342/9k2zKeUfcKkAz1dGt5MP6dZMm4G.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Assassino de Sangue" src="https://image.tmdb.org/t/p/w342/6IhsMY5Ud5WJxtEX9gpGuvHP7nl.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Re/Member: A Última Noite" src="https://image.tmdb.org/t/p/w342/iaKNGPfkfzS6xmNR5Y1bWJe2FXS.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Demon Slayer: Kimetsu no Yaiba Castelo Infinito" src="https://image.tmdb.org/t/p/w342/c55sXCaQBj3vuHqZe62tv90xCQS.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Terror em Silent Hill: Regresso Para o Inferno" src="https://image.tmdb.org/t/p/w342/mRbdOe5vMnY3HXxLnWgRFJHbCPs.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Máquina de Guerra" src="https://image.tmdb.org/t/p/w342/48h40o6Q97hZaqH0g7bOiXOrImX.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Missão Refúgio" src="https://image.tmdb.org/t/p/w342/hSvhZRkbYD9crC4nqy8uCk9EdFH.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="O Refúgio" src="https://image.tmdb.org/t/p/w342/49b7CTeJqugnpBboT6D5xGy3h4H.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Zootopia 2" src="https://image.tmdb.org/t/p/w342/v8sjoZynhlyAT4pYdTI8m7FFHq9.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Твое сердце будет разбито" src="https://image.tmdb.org/t/p/w342/iGpMm603GUKH2SiXB2S5m4sZ17t.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Cara de Um, Focinho de Outro" src="https://image.tmdb.org/t/p/w342/ftPFJBGbldoWiiPrmesW96zBzdH.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Destruição Final 2" src="https://image.tmdb.org/t/p/w342/sgvNCaWe4LmdKRKmIHR9VvzhKR2.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Justiça Artificial" src="https://image.tmdb.org/t/p/w342/vI7bNC07BaSEvZ9ATzV57wpAYwQ.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="O Som da Morte" src="https://image.tmdb.org/t/p/w342/1tX11KQzujSDXdszFNRvQbbNi72.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Hellfire" src="https://image.tmdb.org/t/p/w342/tQti9QTf13MfzNpXguijgNh7ojE.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Dupla Perigosa" src="https://image.tmdb.org/t/p/w342/jYpk5Zun4VTWrplO3m9BHANi4S5.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Boa Sorte, Divirta-se, Não Morra" src="https://image.tmdb.org/t/p/w342/ybXcKzJr0nuRZaLB74ujITNPNeH.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Vanaveera" src="https://image.tmdb.org/t/p/w342/oBYExKI8E3bTzQjPkofhpV2EJon.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="A Guerra dos Mundos" src="https://image.tmdb.org/t/p/w342/yY5CbfXBxsPvYi0TzmaCP7uunnn.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="“O Morro dos Ventos Uivantes”" src="https://image.tmdb.org/t/p/w342/762vOiAWzosAH95sKLzUqYaAoHR.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Avatar: Fogo e Cinzas" src="https://image.tmdb.org/t/p/w342/9k2zKeUfcKkAz1dGt5MP6dZMm4G.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Assassino de Sangue" src="https://image.tmdb.org/t/p/w342/6IhsMY5Ud5WJxtEX9gpGuvHP7nl.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Re/Member: A Última Noite" src="https://image.tmdb.org/t/p/w342/iaKNGPfkfzS6xmNR5Y1bWJe2FXS.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Demon Slayer: Kimetsu no Yaiba Castelo Infinito" src="https://image.tmdb.org/t/p/w342/c55sXCaQBj3vuHqZe62tv90xCQS.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Terror em Silent Hill: Regresso Para o Inferno" src="https://image.tmdb.org/t/p/w342/mRbdOe5vMnY3HXxLnWgRFJHbCPs.jpg"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-carousel" style="padding-top: 0;">
+        <div class="container">
+            <h2>Séries em alta definição, diretamente na sua TV! O Meu Site tem tudo para você se divertir. 📺</h2>
+            <div class="marquee marquee--rtl">
+                <div class="marquee__track" id="seriesTrack" aria-live="polite" style="min-width: 200%;"><div class="poster"><img loading="lazy" decoding="async" alt="ONE PIECE: A Série" src="https://image.tmdb.org/t/p/w342/aesLt9fsKSA6KCgGxA60VVxjtLk.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="O Novato" src="https://image.tmdb.org/t/p/w342/yCPGrd6fzbftuaH97OUS6tUdE4B.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Tagesschau" src="https://image.tmdb.org/t/p/w342/7dFZJ2ZJJdcmkp05B9NWlqTJ5tq.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Bones" src="https://image.tmdb.org/t/p/w342/rElaRnNez2dXBCMv1THHdVcroFY.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Supernatural" src="https://image.tmdb.org/t/p/w342/eK4gEBWNGJoxCD67KFKzaKfSzWU.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Lei &amp; Ordem: Unidade de Vítimas Especiais" src="https://image.tmdb.org/t/p/w342/nYkYmNFfKydgrcO45oNjOnW0FDJ.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Watch What Happens Live with Andy Cohen" src="https://image.tmdb.org/t/p/w342/onSD9UXfJwrMXWhq7UY7hGF2S1h.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Gute Zeiten, schlechte Zeiten" src="https://image.tmdb.org/t/p/w342/qujVFLAlBnPU9mZElV4NZgL8iXT.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Uma Família da Pesada" src="https://image.tmdb.org/t/p/w342/j28XGzAhvJNGWEHbYrzvREw7kKd.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="NCIS: Investigação Naval" src="https://image.tmdb.org/t/p/w342/abjNx4jqvaJn5UvsuLaBVRVndyJ.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Grey's Anatomy" src="https://image.tmdb.org/t/p/w342/vrChGRs0DsoCoaeHif8PlZY637Q.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Os Simpsons" src="https://image.tmdb.org/t/p/w342/1jGPgDDcmg3Xgs3WO8sfYfbnFoA.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="The Talk" src="https://image.tmdb.org/t/p/w342/7sizkzLu7RNowjfojv6eUn2tAzA.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="EastEnders" src="https://image.tmdb.org/t/p/w342/z4jgyI5TpoRZiJTNchkVkMrGQyz.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="O Mentalista" src="https://image.tmdb.org/t/p/w342/d1ZcT5tHzUeQ7zgYecOVoWxH9FL.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="オバケのQ太郎" src="https://image.tmdb.org/t/p/w342/acb9g0rlsFhy3LBPDvMF7Tso9Q0.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Lei &amp; Ordem" src="https://image.tmdb.org/t/p/w342/9ez0xyH6IIg8Ww4hNpiD9lHRRH7.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="The Daily Show com Trevor Noah" src="https://image.tmdb.org/t/p/w342/ixcfyK7it6FjRM36Te4OdblAq4X.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Os Goldbergs" src="https://image.tmdb.org/t/p/w342/7QhULsJ0eXq3fhpGYuGifbfWy1I.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Malhação" src="https://image.tmdb.org/t/p/w342/bF24r2FxsjzgkJcrbBU8RC9JVoU.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="ONE PIECE: A Série" src="https://image.tmdb.org/t/p/w342/aesLt9fsKSA6KCgGxA60VVxjtLk.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="O Novato" src="https://image.tmdb.org/t/p/w342/yCPGrd6fzbftuaH97OUS6tUdE4B.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Tagesschau" src="https://image.tmdb.org/t/p/w342/7dFZJ2ZJJdcmkp05B9NWlqTJ5tq.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Bones" src="https://image.tmdb.org/t/p/w342/rElaRnNez2dXBCMv1THHdVcroFY.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Supernatural" src="https://image.tmdb.org/t/p/w342/eK4gEBWNGJoxCD67KFKzaKfSzWU.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Lei &amp; Ordem: Unidade de Vítimas Especiais" src="https://image.tmdb.org/t/p/w342/nYkYmNFfKydgrcO45oNjOnW0FDJ.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Watch What Happens Live with Andy Cohen" src="https://image.tmdb.org/t/p/w342/onSD9UXfJwrMXWhq7UY7hGF2S1h.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Gute Zeiten, schlechte Zeiten" src="https://image.tmdb.org/t/p/w342/qujVFLAlBnPU9mZElV4NZgL8iXT.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Uma Família da Pesada" src="https://image.tmdb.org/t/p/w342/j28XGzAhvJNGWEHbYrzvREw7kKd.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="NCIS: Investigação Naval" src="https://image.tmdb.org/t/p/w342/abjNx4jqvaJn5UvsuLaBVRVndyJ.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Grey's Anatomy" src="https://image.tmdb.org/t/p/w342/vrChGRs0DsoCoaeHif8PlZY637Q.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Os Simpsons" src="https://image.tmdb.org/t/p/w342/1jGPgDDcmg3Xgs3WO8sfYfbnFoA.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="The Talk" src="https://image.tmdb.org/t/p/w342/7sizkzLu7RNowjfojv6eUn2tAzA.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="EastEnders" src="https://image.tmdb.org/t/p/w342/z4jgyI5TpoRZiJTNchkVkMrGQyz.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="O Mentalista" src="https://image.tmdb.org/t/p/w342/d1ZcT5tHzUeQ7zgYecOVoWxH9FL.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="オバケのQ太郎" src="https://image.tmdb.org/t/p/w342/acb9g0rlsFhy3LBPDvMF7Tso9Q0.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Lei &amp; Ordem" src="https://image.tmdb.org/t/p/w342/9ez0xyH6IIg8Ww4hNpiD9lHRRH7.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="The Daily Show com Trevor Noah" src="https://image.tmdb.org/t/p/w342/ixcfyK7it6FjRM36Te4OdblAq4X.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Os Goldbergs" src="https://image.tmdb.org/t/p/w342/7QhULsJ0eXq3fhpGYuGifbfWy1I.jpg"></div><div class="poster"><img loading="lazy" decoding="async" alt="Malhação" src="https://image.tmdb.org/t/p/w342/bF24r2FxsjzgkJcrbBU8RC9JVoU.jpg"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section id="planos" class="planos">
+        <div class="container">
+            
+            <div class="planos-grid">
+                
+                <div class="card-plano">
+                    <h3>O Meu Site Premium: acesso total a milhares de filmes, séries e canais em alta qualidade. Aproveite a experiência de streaming sem igual! Acesso Premium Mensal</h3>
+                    <div class="preco"><span>R$</span> 29,99</div>
+                    
+                    <ul class="lista-beneficios">
+                        <li>Catálogo completo (Filmes, Séries, Novelas)</li>
+                        <li>Canais de Esportes, Notícias e Variedades</li>
+                        <li>Compatível com TV Android ou TV Box.</li>
+                        <li>Suporte Todos os dias.(Consulte Horários)</li>
+                    </ul>
+                    
+                    <a href="https://api.whatsapp.com/send?phone=5511999999999NUMERO?text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20com%20o%20aplicativo!" class="btn-comprar">
+                        VER PLATAFORMA OFICIAL ➜
+                    </a>
+                </div>
+
+                <div class="card-plano">
+                    <h3>Quer aproveitar o Meu Site Premium por mais tempo? Escolha o nosso Acesso Premium 2 Meses e aproveite a experiência sem igual!</h3>
+                    <div class="preco"><span>R$</span> 59,99</div>
+                    
+                    <ul class="lista-beneficios">
+                        <li>Catálogo completo (Filmes, Séries, Novelas)</li>
+                        <li>Canais de Esportes, Notícias e Variedades</li>
+                        <li>Compatível com TV Android ou TV Box.</li>
+                        <li>Suporte Todos os dias.(Consulte Horários)</li>
+                    </ul>
+                    
+                    <a href="https://api.whatsapp.com/send?phone=5511999999999NUMERO?text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20com%20o%20aplicativo!" class="btn-comprar">
+                        VER PLATAFORMA OFICIAL ➜
+                    </a>
+                </div>
+
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <h2>Tudo o que você precisa saber sobre o Meu Site, em apenas um lugar. Confira nossas Perguntas Frequentes!</h2>
+        
+        <div class="faq-item">
+            <button class="faq-pergunta">O aplicativo já vem com filmes e séries?</button>
+            <div class="faq-resposta">
+                <p>Sim, o Meu Site é o seu destino para filmes e séries atualizados e canais estáveis em alta qualidade. Não perca a chance de se divertir!</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-pergunta">Funciona em quais aparelhos?</button>
+            <div class="faq-resposta">
+                <p>Nosso sistema reprodutor é compatível com Smart TVs (Android, Samsung, LG), TV Box, Amazon Fire Stick, Celulares Android e Computadores.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-pergunta">Como recebo o acesso ao aplicativo?</button>
+            <div class="faq-resposta">
+                <p>Ao clicar no botao whats app nossa equipe estará de prontidão para lhe atender.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <button class="faq-pergunta">Preciso de internet rápida?</button>
+            <div class="faq-resposta">
+                <p>Recomendamos uma conexão de pelo menos 45 Mega de velocidade para garantir que o aplicativo reproduza as mídias em alta qualidade de forma fluida.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-pro">
+        <div class="container">
+            <div class="footer-grid">
+                
+                <div class="footer-col">
+                    <img src="https://play-lh.googleusercontent.com/pvGdA_fFqMNDDZ2hef1_qK0VapDKMrmidKrYcD0OmLfcKcMwM_yOGlLajjVx2tzXf_Q" alt="Logo IBO REVENDA">
+                    <p>O reprodutor de mídia definitivo. Alta tecnologia, estabilidade e interface de ponta para a sua melhor experiência.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Links Úteis</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://api.whatsapp.com/send?phone=5511999999999NUMERO?text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20com%20o%20aplicativo!">Plataforma Oficial</a></li>
+                        <li><a href="#faq">Tudo o que você precisa saber sobre o Meu Site, em apenas um lugar. Confira nossas Perguntas Frequentes!</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Segurança e Suporte</h4>
+                    <p>Tecnologia com segurança aprovada e verificada.</p>
+                    
+                    <div class="selos-seguranca">
+                        <div class="selo">
+                            <span>🔒</span> Navegação Segura
+                        </div>
+                        <div class="selo">
+                            <span>🛡️</span> Dados Protegidos
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="aviso-legal">
+                <strong>AVISO LEGAL:</strong> O IBO REVENDA comercializa exclusivamente licenças de software para reprodução de mídia (Media Player). O nosso aplicativo é vazio e não hospeda, não fornece, não vende e não distribui listas de reprodução (playlists), canais, filmes ou séries protegidos por direitos autorais. O usuário final é total e exclusivamente responsável pelo conteúdo que reproduz através da nossa tecnologia.
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 IBO REVENDA Software e Tecnologia. Todos os direitos reservados.</p>
+                <p style="margin-top: 10px; font-size: 12px; color: #555;">Este site não é afiliado ao Facebook, Instagram, Meta Inc. ou Google LLC. Todos os serviços são prestados de forma independente. O uso das imagens de capas serve apenas como ilustração de interface e layout do software.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://api.whatsapp.com/send?phone=5511999999999NUMERO?text=Ol%C3%A1%2C%20preciso%20de%20ajuda%20com%20o%20aplicativo!" target="_blank" class="btn-whatsapp-flutuante">
+        <svg viewBox="0 0 32 32">
+            <path d="M16.05 32h-.05c-2.6 0-5.15-.65-7.4-1.9L0 32l1.95-8.45c-1.35-2.3-2.05-4.9-2.05-7.6 0-8.8 7.15-15.95 15.95-15.95S32 7.15 32 15.95 24.85 32 16.05 32zm0-29.25C8.6 2.75 2.5 8.8 2.5 16.25c0 2.35.6 4.65 1.75 6.65l-1.15 5.05 5.2-1.15c1.95 1.1 4.15 1.65 6.4 1.65h.05c7.45 0 13.5-6.05 13.5-13.5S22.25 2.75 16.05 2.75zm7.3 17.65c-.4-.2-2.35-1.15-2.7-1.3-.35-.15-.6-.2-.85.2-.25.4-1.05 1.3-1.25 1.55-.2.25-.4.3-.8.1-1.2-.6-2.25-1.15-3.2-2.65-.25-.4.25-.35.6-.95.15-.3.05-.6-.05-.8s-1-2.45-1.35-3.35c-.35-.9-.7-.75-1-.75h-.85c-.3 0-.75.1-1.15.55-.4.45-1.5 1.45-1.5 3.5s1.55 4 1.75 4.3c.2.25 2.95 4.5 7.15 6.3 1 .45 1.8.7 2.4.9.1.05 1.15.2 1.55.15.45-.05 1.35-.55 1.55-1.05.2-.5.2-.95.15-1.05-.05-.15-.2-.25-.6-.45z"></path>
+        </svg>
+    </a>
+
+    <script>
+        // Lógica do FAQ (Abrir/Fechar)
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const btn = item.querySelector('.faq-pergunta');
+            const resposta = item.querySelector('.faq-resposta');
+            
+            btn.addEventListener('click', () => {
+                const isActive = item.classList.contains('ativo');
+                
+                // Fecha todos os outros
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('ativo');
+                    otherItem.querySelector('.faq-resposta').style.maxHeight = null;
+                });
+
+                // Se não estava ativo, abre este
+                if (!isActive) {
+                    item.classList.add('ativo');
+                    resposta.style.maxHeight = resposta.scrollHeight + "px";
+                }
+            });
+        });
+
+        // ==========================================
+        // Lógica da API do TMDB (Carrossel de Capas)
+        // ==========================================
+        const TMDB_KEY = "9049a1d821f51ef88e70e430d10298c5"; 
+        const TMDB_BASE = "https://api.themoviedb.org/3";
+        const IMG_BASE = "https://image.tmdb.org/t/p/w342";
+        const MAX_POSTERS = 20;
+
+        const moviesTrack = document.getElementById("moviesTrack");
+        const seriesTrack = document.getElementById("seriesTrack");
+
+        function renderSkeleton(track, count = 10) {
+            track.innerHTML = "";
+            for(let i=0; i<count; i++) {
+                const d = document.createElement("div");
+                d.className = "poster skeleton";
+                track.appendChild(d);
+            }
+        }
+        
+        renderSkeleton(moviesTrack);
+        renderSkeleton(seriesTrack);
+
+        function uniqById(list) {
+            const seen = new Set();
+            return list.filter(item => {
+                if (!item || !item.id || seen.has(item.id)) return false;
+                seen.add(item.id);
+                return true;
+            });
+        }
+
+        async function tmdbGet(path, params = {}) {
+            const url = new URL(TMDB_BASE + path);
+            url.searchParams.set("api_key", TMDB_KEY);
+            url.searchParams.set("language", "pt-BR");
+            url.searchParams.set("region", "BR");
+            for(const [k,v] of Object.entries(params)) url.searchParams.set(k, v);
+            const res = await fetch(url.toString(), { headers: { "accept":"application/json" } });
+            if(!res.ok) throw new Error("TMDB error: " + res.status);
+            return res.json();
+        }
+
+        function makePoster(src, alt) {
+            const wrap = document.createElement("div");
+            wrap.className = "poster";
+            const img = document.createElement("img");
+            img.loading = "lazy";
+            img.decoding = "async";
+            img.alt = alt || "Capa Exemplo";
+            img.src = src;
+            wrap.appendChild(img);
+            return wrap;
+        }
+
+        function fillTrack(track, posters) {
+            track.innerHTML = "";
+            const frag = document.createDocumentFragment();
+            posters.forEach(p => frag.appendChild(p));
+            track.appendChild(frag);
+            posters.forEach(p => track.appendChild(p.cloneNode(true)));
+            track.style.minWidth = "200%";
+        }
+
+        function postersFromTmdbResults(results) {
+            return results
+                .filter(r => r && r.poster_path)
+                .slice(0, MAX_POSTERS)
+                .map(r => makePoster(IMG_BASE + r.poster_path, r.title || r.name || "Capa"));
+        }
+
+        async function loadMovies() {
+            const [popular, nowPlaying] = await Promise.all([
+                tmdbGet("/movie/popular", { page: 1 }),
+                tmdbGet("/movie/now_playing", { page: 1 })
+            ]);
+            const merged = uniqById([...(popular.results||[]), ...(nowPlaying.results||[])]);
+            fillTrack(moviesTrack, postersFromTmdbResults(merged));
+        }
+
+        async function loadSeries() {
+            const [popular, onAir] = await Promise.all([
+                tmdbGet("/tv/popular", { page: 1 }),
+                tmdbGet("/tv/on_the_air", { page: 1 })
+            ]);
+            const merged = uniqById([...(popular.results||[]), ...(onAir.results||[])]);
+            fillTrack(seriesTrack, postersFromTmdbResults(merged));
+        }
+
+        const start = async () => {
+            try { 
+                await Promise.all([loadMovies(), loadSeries()]); 
+            } catch(err) {
+                moviesTrack.innerHTML = '<div style="color:#666;">Não foi possível carregar as capas.</div>';
+                seriesTrack.innerHTML = '<div style="color:#666;">Não foi possível carregar as capas.</div>';
+            }
+        };
+
+        if ("requestIdleCallback" in window) requestIdleCallback(start, { timeout: 1500 });
+        else window.addEventListener("load", start);
+    </script>
+
+<script id="vyn-bs" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script><script id="vyn-live-script">
+
+            document.addEventListener("DOMContentLoaded", () => {
+
+                if(document.body.classList.contains('is-editor')) return;
+
+                
+
+                // 1. Observer de Animação
+
+                const obs = new IntersectionObserver((entries) => {
+
+                    entries.forEach(e => {
+
+                        if(e.isIntersecting) {
+
+                            const animClass = e.target.getAttribute('data-anim-class');
+
+                            if(animClass) {
+
+                                e.target.classList.add('animate__animated', animClass);
+
+                                e.target.style.visibility = 'visible';
+
+                            }
+
+                            obs.unobserve(e.target);
+
+                        }
+
+                    });
+
+                });
+
+
+
+                document.querySelectorAll('.animate__animated').forEach(el => {
+
+                    const animClass = Array.from(el.classList).find(c => c.startsWith('animate__') && c !== 'animate__animated');
+
+                    if(animClass) {
+
+                        el.setAttribute('data-anim-class', animClass);
+
+                        el.classList.remove('animate__animated', animClass);
+
+                        el.style.visibility = 'hidden';
+
+                        obs.observe(el);
+
+                    }
+
+                });
+
+
+
+                // 2. Fallback para links alternativos
+
+                document.querySelectorAll('[data-href]').forEach(el => {
+
+                    el.addEventListener('click', function(e) {
+
+                        e.preventDefault();
+
+                        const url = this.getAttribute('data-href');
+
+                        if(url.includes('http') || url.includes('whatsapp')) window.open(url, '_blank');
+
+                        else window.location.href = url;
+
+                    });
+
+                });
+
+            });
+
+        </script></body></html>
